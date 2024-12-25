@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You and me</title>
+    <style>
+        
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: url(/storage/emulated/0/DCIM/Screenshots/ocr_screenshot_1735109847.png);
+            background-size: cover;
+            heighh: 100vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .planet{
+            width: 20em;
+            height: 20em;
+            background: url(/storage/emulated/0/Download/8k_earth_daymap.jpg);
+            box-shadow: inset -3em -3em 3em #000,
+            -0.10em -0.10em 2em #cab776;
+            position: relative;
+            animation: rotate 10s linear infinite;
+        }
+        
+        .moon{
+            background: url(/storage/emulated/0/Download/8k_moon.jpg);
+            box-shadow: inset -1.5em -1.5em 1.5em #000,
+            -0.2em -0.2em 0.5em #ccc;
+            width: 6em;
+            height: 6em;
+            position: absolute;
+            left: -11em;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: rotate 5s linear infinite,
+            orbit 5s infinite ease-in-out;
+            z-index: 1;
+        }
+        
+        .planet, .moon{
+            border-radius: 50%;
+            background-repeat: repeat;
+            background-size: 200% 100%;
+        }
+        
+        @keyframes rotate{
+            to{background-position: -200% 0;}
+        }
+        
+        @keyframes orbit{
+            49%{
+                z-index: 1;
+            }
+            
+            50%{
+                left: 25em;
+                z-index: -1;
+            }
+            
+            99%{
+                z-index: -1;
+            }
+            
+            100%{
+                left: -11em;
+                z-index: 1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="planet">
+        <div class="moon"></div>
+    </div>
+</body>
+</html>
