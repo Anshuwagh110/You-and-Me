@@ -29,6 +29,15 @@
             position: relative;
             animation: rotate 10s linear infinite;
         }
+
+        .you{
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            top: -25%;
+            left: 4em;
+            z-index: 2;
+        }
         
         .moon{
             background: url(2k_moon.jpg);
@@ -43,6 +52,17 @@
             animation: rotate 5s linear infinite,
             orbit 5s infinite ease-in-out;
             z-index: 1;
+        }
+
+        /* text */
+        
+        .me{
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 20%;
+            left: -8em;
+            animation: me 5s infinite ease-in-out;
         }
         
         .planet, .moon{
@@ -74,11 +94,35 @@
                 z-index: 1;
             }
         }
+
+        /* text */
+    
+        @keyframes me{
+            49%{
+                z-index: 1;
+            }
+            
+            50%{
+                left: 22em;
+                z-index: -1;
+            }
+            
+            99%{
+                z-index: -1;
+            }
+            
+            100%{
+                right: -8em;
+                z-index: 1;
+            }
+        }
         
     </style>
 </head>
 <body>
     <div class="planet">
+        <div class="you">You...💖</div>
+        <div class="me">Me</div>
         <div class="moon"></div>
     </div>
 </body>
